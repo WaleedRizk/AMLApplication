@@ -1,0 +1,14 @@
+# Ignore Maven and IDE directories
+target
+.idea
+*.iml
+*.class
+
+# Ignore test files and logs
+src/test/
+logs
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db

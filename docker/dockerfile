@@ -1,0 +1,18 @@
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the built jar from the target directory to the container
+COPY target/aml-engine.jar /app/aml-engine.jar
+
+# Expose the port your application runs on
+EXPOSE 8080
+
+# Set the environment variable for the profile to run
+ARG PROFILE=dev
+ENV SPRING_PROFILES_ACTIVE=${PROFILE}
+
+# Run the jar file
+ENTRYPOINT ["java", "-jar", "/app/aml-engine.jar"]
