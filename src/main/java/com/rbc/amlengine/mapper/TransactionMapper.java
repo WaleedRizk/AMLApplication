@@ -15,7 +15,7 @@ public interface TransactionMapper {
     TransactionMapper INSTANCE = Mappers.getMapper(TransactionMapper.class);
 
     // Map CSV rows to Transaction object with specific field conversion
-    @Mapping(target = "time", source = "csvRow", qualifiedByName = "convertToTime" ) //"convertToTime")
+    @Mapping(target = "time", source = "csvRow", qualifiedByName = "convertToTime" )
     @Mapping(target = "amount", source = "csvRow", qualifiedByName = "convertToAmount")
     @Mapping(target = "account", source = "csvRow", qualifiedByName = "convertToAccount")
     Transaction toTransaction(String csvRow); 
